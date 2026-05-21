@@ -31,6 +31,11 @@ fun LibrosListScreen(
     val uiState by viewModel.uiState.collectAsState()
     var showOnlyAvailable by remember { mutableStateOf(false) }
 
+    // Refresh data when entering the screen
+    LaunchedEffect(Unit) {
+        if (showOnlyAvailable) viewModel.cargarLibrosDisponibles() else viewModel.cargarLibros()
+    }
+
     Scaffold(
         topBar = {
             TopAppBar(

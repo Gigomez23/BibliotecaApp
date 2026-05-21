@@ -5,5 +5,5 @@ data class Autor(
     val nombre: String = "",
     val nacionalidad: String = "",
     val fechaCreacion: String? = null,
-    val libro: Libro? = null,
+    val libros: List<Libro>? = null,
 )

@@ -16,10 +16,10 @@ interface AutorApi {
     suspend fun getAutorById(@Path("id") id: Long): Autor
 
     @POST("api/autores")
-    suspend fun createAutor(@Body libro: Autor): Autor
+    suspend fun createAutor(@Body autor: Autor): Autor
 
     @PUT("api/autores/{id}")
-    suspend fun updateAutor(@Path("id") id: Long, @Body Autor: Autor): Autor
+    suspend fun updateAutor(@Path("id") id: Long, @Body autor: Autor): Autor
 
     @DELETE("api/autores/{id}")
     suspend fun deleteAutor(@Path("id") id: Long)

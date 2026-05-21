@@ -30,6 +30,11 @@ fun AutoresListScreen(
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
+    // Refresh data when entering the screen
+    LaunchedEffect(Unit) {
+        viewModel.cargarAutores()
+    }
+
     Scaffold(
         topBar = {
             TopAppBar(

@@ -6,7 +6,9 @@ BibliotecaApp es una aplicación Android moderna diseñada para la gestión efic
 
 ### ✍️ Gestión de Autores
 * **Listado Completo:** Visualización de todos los autores registrados en el sistema.
+* **Detalle Expandido:** Al editar un autor, se muestra una lista de todos los libros publicados por él.
 * **CRUD Operaciones:** Capacidad para registrar nuevos autores, editar información existente y eliminar registros.
+* **Sincronización Automática:** La lista se actualiza instantáneamente después de cualquier cambio (crear/editar/eliminar).
 * **Interfaz Intuitiva:** Identificación visual rápida mediante avatares generados dinámicamente.
 
 ### 📖 Gestión de Libros

@@ -57,7 +57,10 @@ fun LibroDetailScreen(
             TopAppBar(
                 title = { Text(if (!isEditing) "Nuevo Libro" else "Editar Libro", fontWeight = FontWeight.Bold) },
                 navigationIcon = {
-                    IconButton(onClick = { navController.popBackStack() }) {
+                    IconButton(onClick = { 
+                        viewModel.cargarLibros() // Ensure state is full when going back
+                        navController.popBackStack() 
+                    }) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Atrás")
                     }
                 },

@@ -23,7 +23,7 @@ class AutorViewModel : ViewModel() {
           cargarAutores()
      }
 
-     private fun cargarAutores() {
+     fun cargarAutores() {
          viewModelScope.launch {
              try {
                  val autores = RetrofitClient.api_autor.getAutores()
@@ -34,10 +34,12 @@ class AutorViewModel : ViewModel() {
          }
      }
 
-    private fun buscarAutor(id: Long) {
+    fun buscarAutor(id: Long) {
         viewModelScope.launch {
             try {
+                _uiState.value = AutorUiState.Loading
                 val autor = RetrofitClient.api_autor.getAutorById(id)
+                // We keep the single autor in the success state for simplicity in the detail screen
                 _uiState.value = AutorUiState.Success(listOf(autor))
             } catch (e: Exception) {
                 _uiState.value = AutorUiState.Error(
