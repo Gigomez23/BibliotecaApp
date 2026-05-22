@@ -46,7 +46,7 @@ fun LibrosListScreen(
                 ),
                 actions = {
                     Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(end = 8.dp)) {
-                        Text("Disponibles", style = MaterialTheme.typography.bodySmall)
+                        Text("Disponibles  ", style = MaterialTheme.typography.bodySmall)
                         Switch(
                             checked = showOnlyAvailable,
                             onCheckedChange = { 
@@ -119,10 +119,7 @@ fun LibroItem(
             .padding(8.dp)
             .clickable { onEdit() },
         colors = CardDefaults.cardColors(
-            containerColor = if (libro.disponible) 
-                MaterialTheme.colorScheme.surfaceVariant 
-            else 
-                MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.2f)
+            containerColor = MaterialTheme.colorScheme.surfaceVariant
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
@@ -140,10 +137,10 @@ fun LibroItem(
                     color = MaterialTheme.colorScheme.primary,
                     fontWeight = FontWeight.Bold
                 )
-                Text(
-                    text = "Autor: ${libro.autor?.nombre ?: "Desconocido"}", 
-                    style = MaterialTheme.typography.bodyMedium
-                )
+//                Text(
+//                    text = "Autor: ${libro.autor?.nombre ?: "Desconocido"}",
+//                    style = MaterialTheme.typography.bodyMedium
+//                )
                 Text(
                     text = "Género: ${libro.genero}", 
                     style = MaterialTheme.typography.bodySmall,

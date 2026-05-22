@@ -77,12 +77,5 @@ fun StartScreen() {
         }
         
         Spacer(modifier = Modifier.height(48.dp))
-        
-        Text(
-            text = "UAM - POO II",
-            fontSize = 14.sp,
-            fontWeight = FontWeight.Medium,
-            color = MaterialTheme.colorScheme.secondary
-        )
     }
 }
